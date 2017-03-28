@@ -1,15 +1,18 @@
 .clearfix {
   *zoom: 1;
 }
+
 .clearfix:before,
 .clearfix:after {
   display: table;
   content: "";
   line-height: 0;
 }
+
 .clearfix:after {
   clear: both;
 }
+
 .hide-text {
   font: 0/0 a;
   color: transparent;
@@ -17,6 +20,7 @@
   background-color: transparent;
   border: 0;
 }
+
 .input-block-level {
   display: block;
   width: 100%;
@@ -25,27 +29,33 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .date-picker-date-time {
   position: absolute;
 }
+
 .date-range .date-picker-date-time {
   position: inherit;
 }
+
 [date-picker-wrapper] {
   position: absolute;
   min-width: 220px;
-  z-index: 10;
+  z-index: 11;
   display: block;
   font-size: 14px;
 }
+
 [date-time-append] [date-picker-wrapper] [date-picker] {
   margin-top: -30px;
 }
+
 [date-time-append] [date-picker] {
   position: relative;
   margin-right: -1000px;
   margin-bottom: -1000px;
 }
+
 [date-range] [date-picker] .after.before {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -59,10 +69,10 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f6ab4', GradientType=0);
   border-color: #2f6ab4 #2f6ab4 #1f4677;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #2f6ab4;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  *background-color: #2f6ab4;  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
+
 [date-range] [date-picker] .after.before:hover,
 [date-range] [date-picker] .after.before:active,
 [date-range] [date-picker] .after.before.active,
@@ -72,13 +82,16 @@
   background-color: #2f6ab4;
   *background-color: #2a5ea0;
 }
+
 [date-range] [date-picker] .after.before:active,
 [date-range] [date-picker] .after.before.active {
   background-color: #24528c \9;
 }
+
 [date-picker].hidden {
   display: none;
 }
+
 [date-picker] {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -88,14 +101,14 @@
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #fff;
-  /* GENERAL */
-  padding: 4px;
-  /* SPECIFIC */
+  background-color: #fff;  /* GENERAL */
+  padding: 4px;  /* SPECIFIC */
 }
+
 [date-picker] table {
   margin: 0;
 }
+
 [date-picker] td,
 [date-picker] th {
   padding: 4px 5px;
@@ -107,9 +120,11 @@
   border-radius: 4px;
   border: none;
 }
+
 [date-picker] .switch {
   width: 145px;
 }
+
 [date-picker] span {
   display: block;
   width: 23%;
@@ -122,15 +137,18 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
+
 [date-picker] span:hover {
   background: #eeeeee;
 }
+
 [date-picker] span.disabled,
 [date-picker] span.disabled:hover {
   background: none;
   color: #999999;
   cursor: default;
 }
+
 [date-picker] .active,
 [date-picker] .now {
   color: #ffffff;
@@ -144,12 +162,12 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
   border-color: #0044cc #0044cc #002a80;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #0044cc;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  *background-color: #0044cc;  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+
 [date-picker] .active:hover,
 [date-picker] .now:hover,
 [date-picker] .active:active,
@@ -164,12 +182,14 @@
   background-color: #0044cc;
   *background-color: #003bb3;
 }
+
 [date-picker] .active:active,
 [date-picker] .now:active,
 [date-picker] .active.active,
 [date-picker] .now.active {
   background-color: #003399 \9;
 }
+
 [date-picker] .now {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -183,10 +203,10 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffee905b', GradientType=0);
   border-color: #ee905b #ee905b #e56218;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #ee905b;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  *background-color: #ee905b;  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
+
 [date-picker] .now:hover,
 [date-picker] .now:active,
 [date-picker] .now.active,
@@ -196,31 +216,177 @@
   background-color: #ee905b;
   *background-color: #ec8044;
 }
+
 [date-picker] .now:active,
 [date-picker] .now.active {
   background-color: #e9712d \9;
 }
+
 [date-picker] .disabled {
   background: none;
   color: #999999 !important;
   cursor: default;
 }
+
 [date-picker] [ng-switch-when="year"] span,
 [date-picker] [ng-switch-when="month"] span,
 [date-picker] [ng-switch-when="minutes"] span {
   height: 54px;
   line-height: 54px;
 }
+
 [date-picker] [ng-switch-when="date"] td {
   padding: 0;
 }
+
 [date-picker] [ng-switch-when="date"] span {
   width: 100%;
   height: 26px;
   line-height: 26px;
 }
+
 [date-picker] th:hover,
 [date-picker] [ng-switch-when="date"] td span:hover {
   background: #eeeeee;
+  cursor: pointer;
+}
+
+/* TO DO*/
+
+[date-picker-wrapper] {
+  min-width: 0px;
+  
+  width: 100%;
+  max-width: 220px;
+}
+[date-picker-wrapper] [date-picker]{
+  width: 100%;
+}
+
+[date-picker] {
+  border: 1px solid #ebebeb;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: 0px;
+}
+
+[date-picker] span {
+  font-size: 13px;
+  color: #333333;
+}
+
+[date-picker] table {
+  width: 100%;
+  color: #333333;
+}
+
+[date-picker] td, [date-picker] th {
+  text-shadow: none;
+}
+
+[date-picker] thead tr:nth-child(2) th {
+  font-size: 0px;
+  line-height: 0px;
+}
+
+[date-picker] thead tr:nth-child(2) th:before {
+  font-size: initial;
+  line-height: initial;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+[date-picker] thead tr:nth-child(2) th:nth-child(1):before {
+  content: "一";
+}
+
+[date-picker] thead tr:nth-child(2) th:nth-child(2):before {
+  content: "二";
+}
+
+[date-picker] thead tr:nth-child(2) th:nth-child(3):before {
+  content: "三";
+}
+
+[date-picker] thead tr:nth-child(2) th:nth-child(4):before {
+  content: "四";
+}
+
+[date-picker] thead tr:nth-child(2) th:nth-child(5):before {
+  content: "五";
+}
+
+[date-picker] thead tr:nth-child(2) th:nth-child(6):before {
+  content: "六";
+}
+
+[date-picker] thead tr:nth-child(2) th:nth-child(7):before {
+  content: "日";
+}
+
+[date-picker] [ng-switch-when="date"] span {
+  width: 24px;
+  line-height: 24px;
+  height: 24px;
+}
+
+[date-picker] th:hover,
+[date-picker] span:hover,
+[date-picker] [ng-switch-when="date"] td span:hover {
+  background-color: #ffedf1;
+  color: #ff5073 !important;
+  text-shadow: none;
+}
+
+[date-picker] [ng-switch-when="date"] td span.active:hover {
+  background-color: #ff5073;
+  background-image: none;
+  color: #ffffff !important;
+}
+
+[date-picker] .now.disabled.out-of-valid-range,
+[date-picker] .now.out-of-valid-range[disabled],
+[date-picker] span.disabled.out-of-valid-range:hover,
+[date-picker] [ng-switch-when="date"] td span.disabled.out-of-valid-range:hover {
+  background-color: transparent;
+  color: #999999 !important;
+}
+[date-picker] span.disabled.out-of-valid-range,
+[date-picker] [ng-switch-when="date"] td span.disabled.out-of-valid-range {
+  cursor: default;
+}
+
+[date-picker] .now,
+[date-picker] .now:hover {
+  background-color: #ffedf1;
+  color: #ff5073;
+  background-image: none;
+  text-shadow: none;
+}
+
+[date-picker] .active:hover,
+[date-picker] .now:active,
+[date-picker] .active.active,
+[date-picker] .now.active,
+[date-picker] .active.disabled,
+[date-picker] .active[disabled]
+ {
+  background-color: #ff5073;
+  background-image: none;
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+
+.date-picker-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+input.datepicker-input,
+input.datepicker-input[readonly],
+.common-input.datepicker-input,
+.common-input.datepicker-input[readonly] {
+  background-color: #fff;
   cursor: pointer;
 }

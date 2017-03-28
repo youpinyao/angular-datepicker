@@ -1,3 +1,7 @@
+
+
+require('./angular-datepicker.css');
+
 (function (global, factory) {'use strict';var fnc;fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :(typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :factory(global.angular, global.moment);}(this, function (angular, moment) {
 //(function (global, factory) {
 //  'use strict';
