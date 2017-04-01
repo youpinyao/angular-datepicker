@@ -11,14 +11,14 @@
 ### via bower 
 
 ```
-bower install  angular-datepicker --save
+bower install  angular-datepicker-custom --save
 ```
 
 
 ### via npm 
 
 ```
-npm install  angular-datepicker --save
+npm install  angular-datepicker-custom --save
 ```
 
 After the install add the js, css and the moment files to your page.
