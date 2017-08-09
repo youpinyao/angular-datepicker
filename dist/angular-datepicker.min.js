@@ -118,11 +118,11 @@
           }
         };
 
-        scope.$on('selectDate', (e, d) => {
-          scope.selectDate(d);
+        scope.$on('selectDate', (e, d, fromOther) => {
+          scope.selectDate(d, fromOther);
         })
 
-        scope.selectDate = function(date) {
+        scope.selectDate = function(date, fromOther) {
           if (attrs.disabled) {
             return false;
           }
@@ -137,7 +137,7 @@
 
           var nextView = scope.views[scope.views.indexOf(scope.view) + 1];
           if ((!nextView || partial) || scope.model) {
-            setDate(date);
+            setDate(date, fromOther);
           }
 
           if (nextView) {
@@ -150,14 +150,14 @@
           }
         };
 
-        setDate = function(date) {
+        setDate = function(date, fromOther) {
           // if (date) {
-          scope.model = date;
-          if (ngModel) {
-            ngModel.$setViewValue(date);
-          }
+            scope.model = date;
+            if (ngModel) {
+              ngModel.$setViewValue(date);
+            }
           // }
-          scope.$emit('setDate', scope.model, scope.view);
+          scope.$emit('setDate', scope.model, scope.view, fromOther);
 
           //This is duplicated in the new functionality.
           if (scope.callbackOnSetDate) {
@@ -810,6 +810,10 @@
 
           views.unshift(view);
 
+          attrs.$observe('id', d => {
+            pickerID = d;
+          });
+
           function formatter(value) {
             return dateFilter(value, format, timezone);
           }
@@ -901,6 +905,7 @@
 
           if (pickerID) {
             scope.$on('pickerUpdate', function(event, pickerIDs, data) {
+              // console.log(pickerIDs, pickerID);
               if (eventIsForPicker(pickerIDs, pickerID)) {
                 if (picker) {
                   //Need to handle situation where the data changed but the picker is currently open.
@@ -948,9 +953,9 @@
 
             //If the picker has already been shown before then we shouldn't be binding to events, as these events are already bound to in this scope.
             if (!shownOnce) {
-              scope.$on('setDate', function(event, date, view) {
+              scope.$on('setDate', function(event, date, view, fromOther) {
                 updateInput(event);
-                if (dateChange) {
+                if (dateChange && fromOther !== true) {
                   dateChange(attrs.ngModel, date);
                 }
                 if (dismiss && views[views.length - 1] === view) {
