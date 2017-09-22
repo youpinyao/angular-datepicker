@@ -147,6 +147,8 @@
             scope.$emit('hidePicker');
           } else if (date) {
             prepareViewData();
+            // autoClose
+            scope.$emit('hidePicker');
           }
         };
 
