@@ -1,6 +1,6 @@
 {
   "name": "angular-datepicker-custom",
-  "version": "2.1.11",
+  "version": "2.1.12",
   "main": "dist/angular-datepicker.js",
   "repository": {
     "url": "https://github.com/youpinyao/angular-datepicker.git"
