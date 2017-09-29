@@ -119,10 +119,13 @@
         };
 
         scope.$on('selectDate', (e, d, fromOther) => {
-          scope.selectDate(d, fromOther);
+          scope.selectDate(e, d, fromOther);
         })
 
-        scope.selectDate = function (date, fromOther) {
+        scope.selectDate = function (e, date, fromOther) {
+          if (angular.element(e.target).hasClass('disabled')) {
+            return false;
+          }
           if (attrs.disabled) {
             return false;
           }
@@ -1057,7 +1060,7 @@
       "\n" +
       "            ng-class=\"classes[$index2][$index]\"\r" +
       "\n" +
-      "            ng-click=\"selectDate(day)\" ng-bind=\"day|mFormat:'DD':tz\"></span>\r" +
+      "            ng-click=\"selectDate($event, day)\" ng-bind=\"day|mFormat:'DD':tz\"></span>\r" +
       "\n" +
       "        </td>\r" +
       "\n" +
@@ -1097,7 +1100,7 @@
       "\n" +
       "                ng-repeat=\"year in years\"\r" +
       "\n" +
-      "                ng-click=\"selectDate(year)\" ng-bind=\"year.year()\"></span>\r" +
+      "                ng-click=\"selectDate($event, year)\" ng-bind=\"year.year()\"></span>\r" +
       "\n" +
       "        </td>\r" +
       "\n" +
@@ -1137,7 +1140,7 @@
       "\n" +
       "                ng-class=\"classes[$index]\"\r" +
       "\n" +
-      "                ng-click=\"selectDate(month)\"\r" +
+      "                ng-click=\"selectDate($event, month)\"\r" +
       "\n" +
       "                ng-bind=\"month|mFormat:'MMM':tz\"></span>\r" +
       "\n" +
@@ -1179,7 +1182,7 @@
       "\n" +
       "                ng-class=\"classes[$index]\"\r" +
       "\n" +
-      "                ng-click=\"selectDate(hour)\" ng-bind=\"hour|mFormat:'HH:mm':tz\"></span>\r" +
+      "                ng-click=\"selectDate($event, hour)\" ng-bind=\"hour|mFormat:'HH:mm':tz\"></span>\r" +
       "\n" +
       "        </td>\r" +
       "\n" +
@@ -1219,7 +1222,7 @@
       "\n" +
       "                ng-class=\"classes[$index]\"\r" +
       "\n" +
-      "                ng-click=\"selectDate(minute)\"\r" +
+      "                ng-click=\"selectDate($event, minute)\"\r" +
       "\n" +
       "                ng-bind=\"minute|mFormat:'HH:mm':tz\"></span>\r" +
       "\n" +
